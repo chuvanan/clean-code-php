@@ -69,55 +69,69 @@ Targets R 3.6.x
 
 **Bad:**
 
-```php
-$ymdstr = $moment->format('y-m-d');
+```r
+ymdstr <- fortmat(Sys.time(), "%Y-%m-%d")
 ```
 
 **Good:**
 
-```php
-$currentDate = $moment->format('y-m-d');
+```r
+current_date <- fortmat(Sys.time(), "%Y-%m-%d")
 ```
 
 **[⬆ back to top](#table-of-contents)**
 
 ### Use the same vocabulary for the same type of variable
 
-**Bad:**
+**Bad:** Here we use three different names for the same underlying entity:
 
-```php
-getUserInfo();
-getUserData();
-getUserRecord();
-getUserProfile();
+```r
+get_user_info()
+get_client_data()
+get_customer_record()
 ```
 
-**Good:**
+**Good:** If the entity is the same, you should be consistent in referring to it
+in your functions:
 
-```php
-getUser();
+```r
+get_user_info()
+get_user_data()
+get_user_record()
 ```
+
+**Even better:** R is (also) an object oriented programming language. If it
+makes sense, package the functions together with the concrete implementation of
+the entity in your code, as instance attributes, property methods, or methods:
+
+
+```r
+
+```
+
 
 **[⬆ back to top](#table-of-contents)**
 
 ### Use searchable names (part 1)
 
-We will read more code than we will ever write. It's important that the code we do write is
-readable and searchable. By *not* naming variables that end up being meaningful for
-understanding our program, we hurt our readers.
+We will read more code than we will ever write. It's important that the code we
+do write is readable and searchable. By *not* naming variables that end up being
+meaningful for understanding our program, we hurt our readers.
+
 Make your names searchable.
 
 **Bad:**
 
-```php
-// What the heck is 448 for?
-$result = $serializer->serialize($data, 448);
+```r
+# What the heck is 86400 for?
+Sys.sleep(86400)
 ```
 
 **Good:**
 
-```php
-$json = $serializer->serialize($data, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+```r
+seconds_in_a_day <- 60 * 60 * 24
+Sys.sleep(seconds_in_a_day)
 ```
 
 ### Use searchable names (part 2)
