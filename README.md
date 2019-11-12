@@ -58,7 +58,8 @@ universally agreed upon. These are guidelines and nothing more, but they are
 ones codified over many years of collective experience by the authors of *Clean
 Code*.
 
-Inspired from [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript).
+Inspired from [clean-code-javascript](https://github.com/ryanmcdermott/clean-code-javascript)
+and [clean-code-python](https://github.com/zedr/clean-code-python).
 
 Targets R 3.6.x
 
