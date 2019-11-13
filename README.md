@@ -108,7 +108,7 @@ the entity in your code, as instance attributes, property methods, or methods:
 ```r
 setClass(
     "User",
-    slots = c(data = "data.frame")
+    slots = c(info = "data.frame")
 )
 
 setGeneric("get_info")
