@@ -106,7 +106,20 @@ the entity in your code, as instance attributes, property methods, or methods:
 
 
 ```r
+setClass(
+    "User",
+    slots = c(data = "data.frame")
+)
 
+setGeneric("get_info")
+
+setMethod(
+    f = "get_info",
+    signature("User"),
+    definition = function(x) {
+        ## ...
+    }
+)
 ```
 
 
