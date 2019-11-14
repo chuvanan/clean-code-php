@@ -365,28 +365,28 @@ variable name.
 
 **Bad:**
 
-```php
-class Car
-{
-    public $carMake;
-    public $carModel;
-    public $carColor;
-
-    //...
-}
+```r
+setClass(
+    "Car",
+    slots = c(
+        car_make = "character",
+        car_model = "character",
+        car_color = "character"
+    )
+)
 ```
 
 **Good:**
 
-```php
-class Car
-{
-    public $make;
-    public $model;
-    public $color;
-
-    //...
-}
+```r
+setClass(
+    "Car",
+    slots = c(
+        make = "character",
+        model = "character",
+        color = "character"
+    )
+)
 ```
 
 **[⬆ back to top](#table-of-contents)**
