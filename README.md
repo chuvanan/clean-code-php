@@ -284,39 +284,41 @@ function isShopOpen(string $day): bool
 
 **Bad:**
 
-```php
-function fibonacci(int $n)
-{
-    if ($n < 50) {
-        if ($n !== 0) {
-            if ($n !== 1) {
-                return fibonacci($n - 1) + fibonacci($n - 2);
+```r
+fibonacci <- function(n) {
+    stopifnot(is.integer(n))
+    if (n < 50L) {
+        if (n != 0L) {
+            if (n != 1L) {
+                return(fibonacci(n - 1L) + fibonacci(n - 2L))
             } else {
-                return 1;
+                return(1L)
             }
         } else {
-            return 0;
+            return(0L)
         }
     } else {
-        return 'Not supported';
+        return("Not supported")
     }
 }
 ```
 
 **Good:**
 
-```php
-function fibonacci(int $n): int
-{
-    if ($n === 0 || $n === 1) {
-        return $n;
+```r
+fibonacci <- function(n) {
+    stopifnot(is.integer(n))
+
+    if (n == 0L || n == 1L) {
+        return(n)
     }
 
-    if ($n >= 50) {
-        throw new \Exception('Not supported');
+    if (n >= 50L) {
+        stop("Not supported", call. = FALSE)
     }
 
-    return fibonacci($n - 1) + fibonacci($n - 2);
+    out <- Recall(n - 1L) + Recall(n - 2L)
+    out
 }
 ```
 
