@@ -331,33 +331,28 @@ Explicit is better than implicit.
 
 **Bad:**
 
-```php
-$l = ['Austin', 'New York', 'San Francisco'];
+```r
+l <- c("Austin", "New York", "San Francicso")
 
-for ($i = 0; $i < count($l); $i++) {
-    $li = $l[$i];
-    doStuff();
-    doSomeOtherStuff();
-    // ...
-    // ...
-    // ...
-    // Wait, what is `$li` for again?
-    dispatch($li);
+for (i in 1:length(l)) {
+    li <- l[i]
+    do_stuff()
+    do_some_other_stuff()
+    ## ...
+    ## ...
 }
 ```
 
 **Good:**
 
-```php
-$locations = ['Austin', 'New York', 'San Francisco'];
+```r
+locations <- c("Austin", "New York", "San Francicso")
 
-foreach ($locations as $location) {
-    doStuff();
-    doSomeOtherStuff();
-    // ...
-    // ...
-    // ...
-    dispatch($location);
+for (location in locations) {
+    do_stuff()
+    do_some_other_stuff()
+    ## ...
+    ## ...
 }
 ```
 
